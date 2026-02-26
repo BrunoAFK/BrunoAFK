@@ -5,12 +5,11 @@
 
 # Bruno Pavelja
 
-**DevOps · Platform Engineering · Automation · AI · Operations**
+**DevOps · Operations · AI · Automation · **
 
 [![Portfolio](https://img.shields.io/badge/pavelja.com-000000?style=flat-square&logo=About.me&logoColor=white)](https://pavelja.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/brunopavelja)
-[![Email](https://img.shields.io/badge/bruno@pavelja.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:bruno@pavelja.com)
-[![Profile Views](https://komarev.com/ghpvc/?username=BrunoAFK&style=flat-square&color=grey)](https://github.com/BrunoAFK)
+[![Email](https://img.shields.io/badge/hello@pavelja.me-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:hello@pavelja.me)
 
 </div>
 
@@ -45,28 +44,12 @@ AI             →   prompt engineering · automation pipelines · agent workflo
 
 <div align="center">
 
-### things I've built here
-
-</div>
-
-| repo | what it is |
-|------|------------|
-| [zagreb_transit](https://github.com/BrunoAFK/zagreb_transit) | HA integration combining ZET GTFS + realtime feeds for live departure boards |
-| [zenquotes_tools](https://github.com/BrunoAFK/zenquotes_tools) | HA integration for quotes + "on this day", with optional AI translation |
-| [rss-ai-news-ha-agent](https://github.com/BrunoAFK/rss-ai-news-ha-agent) | n8n + AI Agent news pipeline feeding into Home Assistant |
-| [HA-Resource-Hub](https://github.com/BrunoAFK/HA-Resource-Hub) | HA integrations, scripts, and projects — editable via CMS |
-| [ai-prompts](https://github.com/BrunoAFK/ai-prompts) | reusable AI prompt patterns, context sensors, automation blocks |
-| [proxmox-helper-nginx-manager](https://github.com/BrunoAFK/proxmox-helper-nginx-manager) | bash script for installing and managing Nginx Proxy Manager |
-| [LSM](https://github.com/BrunoAFK/LSM) | script management system for linux servers |
-| [Podcaster](https://github.com/BrunoAFK/Podcaster) | Docker scraper → RSS podcast feeds with Telegram notifications |
-| [CalendarDND](https://github.com/BrunoAFK/CalendarDND) | Android app that silences phone during calendar meetings automatically |
-
----
-
-<div align="center">
-
 ### recent activity
 
 ![Metrics](assets/metrics.svg)
+
+</div>
+
+*most of this repo list was built with AI assistance, and I think that's worth being transparent about*
 
 </div>

@@ -10,6 +10,7 @@
 [![Portfolio](https://img.shields.io/badge/pavelja.com-000000?style=flat-square&logo=About.me&logoColor=white)](https://pavelja.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/brunopavelja)
 [![Email](https://img.shields.io/badge/hello@pavelja.me-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:hello@pavelja.me)
+[![Profile Views](https://komarev.com/ghpvc/?username=BrunoAFK&style=flat-square&color=grey)](https://github.com/BrunoAFK)
 
 </div>
 

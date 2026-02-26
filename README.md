@@ -1,15 +1,7 @@
 <!-- Header -->
 <div align="center">
 
-```
-╔══════════════════════════════════════════════════════════╗
-║                                                          ║
-║   [INFO]  task detected                                  ║
-║   [INFO]  automating...                                  ║
-║   [DONE]  you're welcome                                 ║
-║                                                          ║
-╚══════════════════════════════════════════════════════════╝
-```
+<img src="assets/banner.svg" alt="banner" />
 
 # Bruno Pavelja
 

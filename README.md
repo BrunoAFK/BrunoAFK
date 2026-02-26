@@ -36,16 +36,22 @@ IaC            →   Terraform · Ansible · Bash
 Observability  →   Prometheus · Grafana · Loki
 Edge & Web     →   Cloudflare · Nginx
 Cloud          →   DigitalOcean · Hetzner · AWS · Azure
-Home & Lab     →   Home Assistant · Proxmox · n8n
+HomeLab        →   Home Assistant · Proxmox · n8n · Unifi
 AI             →   prompt engineering · automation pipelines · agent workflows
 ```
 
 ---
 
-<div align="center">
 
-### recent activity
+<details>
+<summary>recent activity</summary>
+<br>
+
+<div align="center">
 
 ![Metrics](assets/metrics.svg)
 
 </div>
+
+
+</details>

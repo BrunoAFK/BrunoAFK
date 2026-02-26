@@ -3,7 +3,7 @@
 
 <img src="assets/banner.svg" alt="banner" />
 
-# Bruno Pavelja
+<img src="assets/name.svg" alt="banner" />
 
 <b> DevOps · Operations · AI · Automation </b>
 

@@ -13,58 +13,45 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Pick random quote and update README
+      - name: Generate random banner SVG
         run: |
           python3 << 'PYEOF'
-          import random, re
+          import random
 
           quotes = [
-            ("if I do it twice, I automate it.",          "if I do it once... I still automate it.       "),
-            ("the goal is not to work less.",              "the goal is to never do the same thing twice. "),
-            ("a script today saves a hundred clicks",      "every day for the rest of your life.          "),
-            ("manual is a temporary state.",               "automation is the plan.                       "),
-            ("I don't trust processes I can't version.",   "I don't trust versions I can't deploy.        "),
-            ("if it's not monitored, it doesn't exist.",   "if it pages at 3am, it definitely exists.     "),
-            ("infrastructure should be boring.",           "outages should not.                           "),
-            ("the best runbook is the one",                "that runs itself.                             "),
+            ("if I do it twice, I automate it.",          "if I do it once... I still automate it."),
+            ("the goal is not to work less.",              "the goal is to never do the same thing twice."),
+            ("a script today saves a hundred clicks",      "every day for the rest of your life."),
+            ("manual is a temporary state.",               "automation is the plan."),
+            ("if it's not monitored, it doesn't exist.",   "if it pages at 3am, it definitely exists."),
+            ("I don't trust processes I can't version.",   "I don't trust versions I can't deploy."),
+            ("infrastructure should be boring.",           "outages should not."),
+            ("the best runbook is the one",                "that runs itself."),
+            ("humans are for decisions.",                  "machines are for everything else."),
+            ("complexity is easy. reliability is hard.",   "automation is how you get both."),
           ]
 
           line1, line2 = random.choice(quotes)
 
-          # pad to fixed width for the box (52 chars of content)
-          def pad(s): return s.ljust(52)
+          svg = f'''<svg width="640" height="100" viewBox="0 0 640 100" xmlns="http://www.w3.org/2000/svg">
+            <rect width="640" height="100" fill="#0d1117" rx="6"/>
+            <rect x="1" y="1" width="638" height="98" fill="none" stroke="#30363d" stroke-width="1" rx="6"/>
+            <text x="320" y="38" font-family="monospace" font-size="14" fill="#e6edf3" text-anchor="middle">{line1}</text>
+            <text x="320" y="62" font-family="monospace" font-size="14" fill="#7d8590" text-anchor="middle">{line2}</text>
+          </svg>'''
 
-          new_box = (
-            "╔══════════════════════════════════════════════════════════╗\n"
-            "║                                                          ║\n"
-            f"║   {pad(line1)}║\n"
-            f"║   {pad(line2)}║\n"
-            "║                                                          ║\n"
-            "╚══════════════════════════════════════════════════════════╝"
-          )
+          import os
+          os.makedirs("assets", exist_ok=True)
+          with open("assets/banner.svg", "w") as f:
+              f.write(svg)
 
-          with open("README.md", "r") as f:
-              content = f.read()
-
-          # replace everything between the ``` fences at the top
-          content = re.sub(
-            r"(```\n)╔.*?╝(\n```)",
-            lambda m: m.group(1) + new_box + m.group(2),
-            content,
-            count=1,
-            flags=re.DOTALL
-          )
-
-          with open("README.md", "w") as f:
-              f.write(content)
-
-          print(f"Selected: {line1.strip()}")
+          print(f"Selected: {line1}")
           PYEOF
 
-      - name: Commit updated README
+      - name: Commit updated banner
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add assets/banner.svg
           git diff --staged --quiet || git commit -m "chore: rotate banner quote"
           git push

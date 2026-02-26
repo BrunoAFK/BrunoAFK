@@ -5,7 +5,7 @@
 
 # Bruno Pavelja
 
-**DevOps · Operations · AI · Automation · **
+<b> DevOps · Operations · AI · Automation </b>
 
 [![Portfolio](https://img.shields.io/badge/pavelja.com-000000?style=flat-square&logo=About.me&logoColor=white)](https://pavelja.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/brunopavelja)
@@ -47,9 +47,5 @@ AI             →   prompt engineering · automation pipelines · agent workflo
 ### recent activity
 
 ![Metrics](assets/metrics.svg)
-
-</div>
-
-*most of this repo list was built with AI assistance, and I think that's worth being transparent about*
 
 </div>

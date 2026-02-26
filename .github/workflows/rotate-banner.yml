@@ -1,0 +1,70 @@
+name: Rotate Banner Quote
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # every day at 6:00 UTC
+  workflow_dispatch:
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pick random quote and update README
+        run: |
+          python3 << 'PYEOF'
+          import random, re
+
+          quotes = [
+            ("if I do it twice, I automate it.",          "if I do it once... I still automate it.       "),
+            ("the goal is not to work less.",              "the goal is to never do the same thing twice. "),
+            ("a script today saves a hundred clicks",      "every day for the rest of your life.          "),
+            ("manual is a temporary state.",               "automation is the plan.                       "),
+            ("I don't trust processes I can't version.",   "I don't trust versions I can't deploy.        "),
+            ("if it's not monitored, it doesn't exist.",   "if it pages at 3am, it definitely exists.     "),
+            ("infrastructure should be boring.",           "outages should not.                           "),
+            ("the best runbook is the one",                "that runs itself.                             "),
+          ]
+
+          line1, line2 = random.choice(quotes)
+
+          # pad to fixed width for the box (52 chars of content)
+          def pad(s): return s.ljust(52)
+
+          new_box = (
+            "╔══════════════════════════════════════════════════════════╗\n"
+            "║                                                          ║\n"
+            f"║   {pad(line1)}║\n"
+            f"║   {pad(line2)}║\n"
+            "║                                                          ║\n"
+            "╚══════════════════════════════════════════════════════════╝"
+          )
+
+          with open("README.md", "r") as f:
+              content = f.read()
+
+          # replace everything between the ``` fences at the top
+          content = re.sub(
+            r"(```\n)╔.*?╝(\n```)",
+            lambda m: m.group(1) + new_box + m.group(2),
+            content,
+            count=1,
+            flags=re.DOTALL
+          )
+
+          with open("README.md", "w") as f:
+              f.write(content)
+
+          print(f"Selected: {line1.strip()}")
+          PYEOF
+
+      - name: Commit updated README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || git commit -m "chore: rotate banner quote"
+          git push
